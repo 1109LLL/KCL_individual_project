@@ -1,0 +1,31 @@
+Dear viewers, this is a presentation of my thesis on the topic of Pricing of Exotic Options Using Monte Carlo Simulation.
+
+************************************************
+Introduction:
+The motivation for this project stems from the escalating complexity of financial markets, which has led to an increasing need for robust pricing methods. With financial practitioners relying on options to manage risks, the accurate pricing of these options becomes indispensable. This research addresses this imperative by investigating the potential of the Monte Carlo method.
+
+However, the complexities of option structures and the necessity for accurate pricing present significant challenges, due to very few closed-form mathematical solutions available. Thus our primary goal is to evaluate the efficiency of the Monte Carlo method in pricing Barrier and Asian options, aiming to offer dependable estimates for these intricate financial derivatives.
+
+************************************************
+Exotic Option:
+The focus of this thesis is on pricing Barrier and Asian options, which has eight different basic types each. For example, an up-and-in call option is a type of Barrier option which is only activated once the underlying asset price has reached a high barrier price. A down-and-out put option means the put option becomes nullified when the asset price has fallen below the down barrier price. For Asian options, the geometric average rate Asian options derive their payoff from the geometric mean of the underlying asset's prices over a specified period, while arithmetic average rate Asian options calculate their payoff based on the arithmetic mean of the underlying asset's prices over the same period. A full discourse of the specific conditions regarding each type of option is presented within the report.
+
+To offer a high-level overview, Barrier options serve as tools for managing risk and capitalising on market movements. They can function as insurance against price fluctuations or as opportunities to gain profit if specific price levels are reached or breached.
+
+Asian options on the other hand are utilised to reflect the average performance of an underlying asset over a specified period, offering protection against short-term volatility. They are often employed by investors seeking stable returns or hedging strategies based on longer-term market trends.
+
+************************************************
+Monte Carlo Method:
+I would now like to introduce the central method utilised in this thesis, the Monte Carlo technique. This method employs random sampling to estimate the expected value of an option by simulating numerous potential price paths for the underlying asset. For each simulated path, the option's payoff is calculated, and the average of these payoffs provides an approximation of the option's value. By repeating this process with a large number of simulations, the Monte Carlo method converges toward a more accurate price estimate, especially for complex options with no closed-form solutions.
+
+The graph above depicts simulation results for pricing an up-and-in Barrier Option. Green price paths indicate activation upon reaching the up barrier, contributing to the expected payoff calculation, while red paths, failing to reach the barrier, are nullified.
+
+Down below is a graph illustrating the simulation outcomes for a geometric average rate Asian option. The average price is computed considering the movements during the last 60 days before expiry, as indicated by the highlighted blue portion.
+
+************************************************
+Simulation Results:
+The key observations obtained for the research is through the confidence interval plot. On the right is an example of the confidence interval plot for pricing an up-and-in call option using Monte Carlo. For specific Barrier and Asian options, the exact price from the closed-form solution, denoted by the blue dashed line, lies within the 95% confidence interval, with the estimated price produced by simulations represented by red and black dots, converging to it as number of simulations increase. The antithetic variate technique aids faster convergence, evident from the narrower orange bounds compared to the wider grey bounds of crude Monte Carlo. Another key finding from the research is that the three random walk models (Euler Scheme, Euler-Maruyama, Milstein) were equally effective in generating converging price paths.
+
+************************************************
+Conclusion:
+In conclusion, the Monte Carlo approach demonstrates its robustness through consistent convergence to exact values from analytical solutions with increasing simulations. This adaptability can be extended to pricing a diverse range of exotic options. Notably, Monte Carlo converges around 5 times faster for Asian options than for Barrier options to the same level of accuracy. The research also reveals consistent convergence rates across different random walk models, suggesting model choice has a lesser impact on accuracy and performance. Overall, this thesis effectively evaluates Monte Carlo's efficacy in pricing Barrier and Asian options, contributing to the field by validating the practicality of pricing exotics with Monte Carlo. It also provides valuable suggestions for future research, emphasising the prioritisation of variance reduction methods over the development of random walk models.
